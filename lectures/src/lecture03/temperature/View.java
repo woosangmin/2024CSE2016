@@ -10,6 +10,6 @@ public class View {
         return n_c;
     }
     void showTemperature(double c, double f) {
-        JOptionPane.showMessageDialog(null, "섭씨" + c + "도는 화씨로 " + f + "도입니다.");
+        System.out.println("섭씨" + c + "도는 화씨로 " + f + "도입니다.");
     }
 }
