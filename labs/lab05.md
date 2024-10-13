@@ -149,6 +149,19 @@ public class Registrar {
 이 클래스는 게임이 진행되는 상황을 외부 사용자에게 보여주는 기능을 갖고 있는 아웃풋 뷰 클래스이다.
 `javax.swing` 패키지에서 제공하는 `JPanel`을 상속받아서 구현하며, 플레이어의 이름, 누적 이긴 횟수, 주사위 한 쌍을 굴린 결과와 누가 이겼는지 게임 보드 윈도우에 표시한다. 윈도우에 어떻게 보여줄지는 `paintComponent` 메소드에 구현한다.
 
+* 가끔 `paintComponent` 메소드가 호출되는 시점이 빠르게 되면 `NullPointerException` 예외가 발생할 수 있다. 이 경우에는 아래 코드를 활용한다.
+```Java 
+	public void paintComponent(Graphics g) {
+		// 게임 진행과 상관없이 그릴 부분
+		// ...
+
+		if (player1.rolled() != null && player2.rolled() != null) {
+			// 게임 진행 후(주사위를 굴린 다음)에 그릴 부분
+			// ...
+		}
+	}
+```
+
 
 ### 컨트롤러 클래스 `Dealer`
 
@@ -164,8 +177,8 @@ public class Registrar {
 3. 결과를 검사하여 승패를 결정하고, 이긴 `Player` 객체는 이긴 횟수를 1 증가시킨다.
 4. 게임 결과를 반영하여 갱신한 게임보드 원도우를 보여준다. `GameBoard`(`JPanel`) 객체의 `repaint()` 메소드를 호출하면 `paintComponent` 메소드가 실행되어 윈도우를 다시 그려준다.
 5. 게임을 계속할지 여부는 `Registrar` 객체의 `wantToContinue()` 메소드를 호출하여 결정한다.
-   - 게임을 계속 진행하려면 `this.dealDiceGame(p1, p2, b, r);`와 같이 자신을 다시 호출하게 하면 된다. 호출하기 전에 해당 `Player` 객체의 `reset()` 메소드를 호출하여 방금 이긴 기록을 삭제해야 함을 명심하자.
-   - 게임을 그만하려면 `System.exit(0)`을 실행하여 애플리케이션을 강제 종료하면 된다.
+    - 게임을 계속 진행하려면 `this.dealDiceGame(p1, p2, b, r);`와 같이 자신을 다시 호출하게 하면 된다. 호출하기 전에 해당 `Player` 객체의 `reset()` 메소드를 호출하여 방금 이긴 기록을 삭제해야 함을 명심하자.
+    - 게임을 그만하려면 `System.exit(0)`을 실행하여 애플리케이션을 강제 종료하면 된다.
 
 ### 스타터 클래스 `DiceGame`
 
