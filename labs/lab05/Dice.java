@@ -46,7 +46,7 @@ public class Dice {
      *     face2 = 주사위 2의 값
      *     sum = 주사위 1, 2의 합
      *     difference = 주사위 1, 2의 차
-     *     twin = (face == face2)
+     *     twin = 쌍둥인지 여부(difference == 0)
      *  */
     public void rollDice() {
         twin = false;
