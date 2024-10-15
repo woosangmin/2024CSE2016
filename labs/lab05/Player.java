@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 public class Player {
 
     /** player의 이름 */

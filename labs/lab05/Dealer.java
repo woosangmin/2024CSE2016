@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 public class Dealer {
     /** player1의 주사위 */
     private Dice p1Rolled;
@@ -10,7 +12,7 @@ public class Dealer {
     /** 사용자의 의사가 확인되었는지 표시하는 변수 */
     private int cont = -1;
     /** 누가 먼저 주사위를 던지는지 표시하는 변수(처음에는 플레이어 1부터) */
-    private int first = 0;
+    private int first = -1;
 
     public Dealer() {
         // player1, 2의 주사위 초기화
@@ -27,10 +29,14 @@ public class Dealer {
             // 플레이어2의 점수가 플레이어 1의 점수보다 크면 first를 1로 설정
             first = 1;
         }
-        if (first == 0) {
+        // 맨 처음 주사위를 던질 때
+        if (first == -1) {
+            p1.play(p1Rolled); p2.play(p2Rolled);
+        }
+        else if (first == 1) {
             // 플레이어1부터 주사위를 던진다.
             p1.play(p1Rolled); p2.play(p2Rolled);
-        } else if (first == 1) {
+        } else if (first == 0) {
             // 플레이어2부터 주사위를 던진다.
             p2.play(p2Rolled); p1.play(p1Rolled);
         }

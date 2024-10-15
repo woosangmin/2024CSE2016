@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 public class DiceGame {
     public static void main(String[] args) {
         Registrar r = new Registrar(); // input-view 초기화

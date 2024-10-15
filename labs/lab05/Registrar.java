@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 import javax.swing.*;
 
 public class Registrar {

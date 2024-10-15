@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -37,10 +39,10 @@ public class GameBoard extends JPanel {
         g.setColor(Color.BLACK);
         // player 1의 이름, 점수 출력
         g.drawString(player1.getName(), 50, 100);
-        g.drawString(Integer.toString(player1.getPoints()), 50, 120);
+        g.drawString(Integer.toString(player1.getPoints()), 63, 120);
         // player 2의 이름, 점수 출력
         g.drawString(player2.getName(), 150, 100);
-        g.drawString(Integer.toString(player2.getPoints()), 150, 120);
+        g.drawString(Integer.toString(player2.getPoints()), 163, 120);
 
         if (player1.getRolled() != null && player2.getRolled() != null) {
             // 게임 진행 후(주사위를 굴린 다음)에 그릴 부분
@@ -55,8 +57,8 @@ public class GameBoard extends JPanel {
                 g.drawString(tie, 100, 140);
             }
             // player 1과 2의 주사위 숫자 묶음(문자열)을 각각 출력
-            g.drawString(Dices1, 50, 160);
-            g.drawString(Dices2, 150, 160);
+            g.drawString(Dices1, 55, 160);
+            g.drawString(Dices2, 155, 160);
         }
     }
 

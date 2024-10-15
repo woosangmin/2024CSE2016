@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 public class Dice {
 
     /** 주사위 1의 숫자 */
