@@ -4,8 +4,8 @@ public class MovingBall {
     private int y_pos; // 공의 중심 y 좌표
     private int radius; // 공의 반지름
 
-    private int x_velocity = +5; // x축 속도
-    private int y_velocity = +2; // y축 속도
+    private int x_velocity; // x축 속도
+    private int y_velocity; // y축 속도
 
     private Box container;
 
@@ -34,6 +34,12 @@ public class MovingBall {
     /** getRadius 공의 반지름 리턴 */
     public int getRadius() {
         return radius;
+    }
+
+    /** setVelocity() 공의 속도를 조절 */
+    public void setVelocity(int x_vel, int y_vel) {
+        x_velocity = x_vel;
+        y_velocity = y_vel;
     }
 
     /** move time_unit 만큼 공을 이동, 벽에 부딪히면 방향을 바꿈
