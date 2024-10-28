@@ -50,7 +50,7 @@ public class GameBoard extends JPanel {
                 // 만약 player1이 이겼다면 player1 측에 '이겼다' 출력
                 g.drawString(win, 50, 140);
             } else if (player2.getWins()) {
-                // 만약 player2가 이겼다면 player1 측에 '이겼다' 출력
+                // 만약 player2가 이겼다면 player2 측에 '이겼다' 출력
                 g.drawString(win, 150, 140);
             } else {
                 // 비긴 경우 중간에 '비겼다' 출력

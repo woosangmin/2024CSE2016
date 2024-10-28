@@ -18,7 +18,7 @@ public class Contrived {
     private String s = "X" + d;
 
     public void printComponent(Graphics g) {
-        System.out.println(d + " " + s); // 실제로 출력 안됨
+        System.out.println(d + " " + s); // frame이 없으므로 실제로 출력 안됨
     }
 
     public static void main(String[] args) {
