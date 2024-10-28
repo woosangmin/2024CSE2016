@@ -1,13 +1,16 @@
 /** BounceController 상자 안에서 움직이는 공 제어 */
-public class BounceController {
-    private MovingBall ball; // 공 객체 (Model)
-    private AnimationWriter writer; // 애니메이션 객체 (Output-View)
+public class BounceControllers {
+    private MovingBall ball1; // 공1 객체 (Model)
+    private MovingBall ball2; // 공2 객체 (Model)
+    private AnimationWriters writer; // 애니메이션 객체 (Output-View)
 
     /** Constructor BounceController 컨트롤러 초기화
-     * @param b 공 객체 (Model)
+     * @param b1 공 객체 (Model)
+     * @param b2 공 객체 (Model)
      * @param w 애니메이션 객체 (Output-View) */
-    public BounceController(MovingBall b, AnimationWriter w) {
-        ball = b;
+    public BounceControllers(MovingBall b1, MovingBall b2, AnimationWriters w) {
+        ball1 = b1;
+        ball2 = b2;
         writer = w;
     }
 
@@ -17,8 +20,9 @@ public class BounceController {
         int painting_delay = 20; // 다시 그리기 사이의 지연 시간 간격
         while (true) {
             delay(painting_delay);
-            ball.move(time_unit);
-            System.out.println(ball.getXposition() + ", " + ball.getYposition());
+            ball1.move(time_unit);
+            ball2.move(time_unit);
+            System.out.println("ball1's position : " + ball1.getXposition() + ", " + ball1.getYposition() + " / ball2's position : " + ball2.getXposition() + ", " + ball2.getYposition());
             writer.repaint();
         }
     }
