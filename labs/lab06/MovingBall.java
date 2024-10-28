@@ -47,13 +47,9 @@ public class MovingBall {
      * @param time_units 프레임 사이의 시간 */
     public void move(int time_units) {
         x_pos = x_pos + x_velocity * time_units;
-        if (x_pos <= 0) x_pos = 0;
-        if (x_pos >= container.getSize()) x_pos = container.getSize() - 15;
         if (container.inHorizontalContact(x_pos))
             x_velocity = - x_velocity;
         y_pos = y_pos - y_velocity * time_units;
-        if (y_pos <= 0) y_pos = 0;
-        if (y_pos >= container.getSize()) y_pos = container.getSize() - 15;
         if (container.inVerticalContact(y_pos))
             y_velocity = - y_velocity;
     }
