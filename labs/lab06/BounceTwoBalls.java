@@ -9,19 +9,25 @@ public class BounceTwoBalls {
         int box_size = 400;
         int balls_radius = 10;
         Box box = new Box(box_size);
-        // 서로 같지 않은 x1와 y1 좌표를 무작위로 생성
+        // 서로 같지 않은 x1와 y1 속도를 무작위로 생성
         int x1 = (int)(Math.random() * 10), y1 = (int)(Math.random() * 10);
-        // loop invariant : y1와 x1의 값은 서로 달라야 한다.
-        while (y1 == x1)
+        // loop invariant : x1의 값이 0이 아니어야 한다.
+        while (x1 == 0)
+            x1 = (int)(Math.random() * 10);
+        // loop invariant : y1와 x1의 값은 서로 달라야 하고 0이 아니어야 한다.
+        while (y1 == x1 || y1 == 0)
             y1 = (int)(Math.random() * 10);
         // 공1을 상자의 적절한 위치에 둠
         MovingBall ball1 = new MovingBall((int)(box_size / 3.0), (int)(box_size / 5.0), balls_radius, box);
         // 공1의 속도를 조절
         ball1.setVelocity(x1, y1);
-        // 서로 같지 않은 x2와 y2 좌표를 무작위로 생성
+        // 서로 같지 않은 x2와 y2 속도를 무작위로 생성
         int x2 = (int)(Math.random() * 10), y2 = (int)(Math.random() * 10);
-        // loop invariant : y2와 x2의 값은 서로 달라야 한다.
-        while (y2 == x2)
+        // loop invariant : x2의 값이 0이 아니어야 한다.
+        while (x2 == 0)
+            x2 = (int)(Math.random() * 10);
+        // loop invariant : y2와 x2의 값은 서로 달라야 하고 0이 아니어야 한다.
+        while (y2 == x2 || y2 == 0)
             y2 = (int)(Math.random() * 10);
         // 공2를 상자의 적절한 위치에 둠
         MovingBall ball2 = new MovingBall((int)(box_size / 5.0), (int)(box_size / 3.0), balls_radius, box);

@@ -13,14 +13,14 @@ public class Box {
      * @param x_position 공의 x 좌표
      * @return 공의 x 좌표가 좌우 벽의 x 좌표와 같거나 벗어났으면 true, 그렇지 않으면 false */
     public boolean inHorizontalContact(int x_position) {
-        return (x_position <= 0) || (x_position >= BOX_SIZE);
+        return (x_position <= 0) || (x_position >= BOX_SIZE - 15);
     }
 
     /** inVerticalContact 공이 y축 방향으로 위/아래 벽에 도달 여부를 리턴
      * @param y_position 공의 y 좌표
      * @return 공의 x 좌표가 좌우 벽의 y 좌표와 같거나 벗어났으면 true, 그렇지 않으면 false */
     public boolean inVerticalContact(int y_position) {
-        return (y_position <= 0) || (y_position >= BOX_SIZE);
+        return (y_position <= 0) || (y_position >= BOX_SIZE - 15);
     }
 
     /** getSize - 상자의 크기를 리턴 */
