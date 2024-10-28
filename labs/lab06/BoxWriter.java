@@ -1,3 +1,4 @@
+// By the grace of the Lord
 import java.awt.*;
 
 /** BoxWriter 상자를 그림 */

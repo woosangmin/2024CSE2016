@@ -1,3 +1,4 @@
+// By the grace of the Lord
 /** MovingBall 2차원 상자에서 움직이는 공 */
 public class MovingBall {
     private int x_pos; // 공의 중심 x 좌표

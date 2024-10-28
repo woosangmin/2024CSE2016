@@ -1,3 +1,4 @@
+// By the grace of the Lord
 import java.awt.*;
 
 /** BallWriter 움직이는 공을 그림 */

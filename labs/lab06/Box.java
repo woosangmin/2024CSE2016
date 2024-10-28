@@ -1,3 +1,4 @@
+// By the grace of the Lord
 /** Box 공이 돌아다니는 상자 */
 public class Box {
     private int BOX_SIZE;

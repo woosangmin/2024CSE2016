@@ -1,3 +1,4 @@
+// By the grace of the Lord
 import java.awt.*;
 
 /** BounceTheBall 애니메이션 객체를 생성하고 공 운동 시작 */
