@@ -28,16 +28,18 @@ public class BounceControllers {
             // 공1과 공2를 각각 움직인다.
             ball1.move(time_unit);
             ball2.move(time_unit);
-                // 피타고라스의 정리를 활용하여 두 공의 충돌 여부를 계산한다.
-                x = Math.abs(ball1.getXposition() - ball2.getXposition());
-                y = Math.abs(ball1.getYposition() - ball2.getYposition());
-                x = Math.pow(x, 2); y = Math.pow(y, 2);
-                d = Math.sqrt(x + y);
-                // 계산된 d의 값이 r * 2보다 작거나 같으면 충돌하였으므로 프로그램을 종료한다.
-                if (d <= ball1.getRadius() * 2) {
-                    JOptionPane.showMessageDialog(null, "충돌했습니다.");
-                    System.out.println("충돌했습니다.");
-                    System.exit(1); }
+            // 피타고라스의 정리를 활용하여 두 공의 충돌 여부를 계산한다.
+            // x = Math.abs(ball1.getXposition() - ball2.getXposition());
+            y = Math.abs(ball1.getYposition() - ball2.getYposition());
+            x = Math.pow(x, 2); y = Math.pow(y, 2);
+            d = Math.sqrt(x + y);
+            // 계산된 d의 값이 r * 2보다 작거나 같으면 충돌하였으므로 프로그램을 종료한다.
+            if (d <= ball1.getRadius() * 2) {
+                // 충돌했을 경우에도 repaint한다.
+                writer.repaint();
+                JOptionPane.showMessageDialog(null, "충돌했습니다.");
+                System.out.println("충돌했습니다.");
+                System.exit(1); }
             System.out.println("ball1's position : " + ball1.getXposition() + ", " + ball1.getYposition() + " / ball2's position : " + ball2.getXposition() + ", " + ball2.getYposition());
             writer.repaint();
         }
