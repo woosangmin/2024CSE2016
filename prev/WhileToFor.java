@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class whileToFor {
+public class WhileToFor {
     /** computeAverage 제출한 시험 점수 평균 계산 (while loop 사용)
      *  @param how_many 시험 점수의 개수 (양수)
      *  @return 평균 점수 */
@@ -30,7 +30,7 @@ public class whileToFor {
         return total_points / how_many;
     }
     public static void main(String[] args) {
-        whileToFor loop = new whileToFor();
+        WhileToFor loop = new WhileToFor();
         System.out.println("평균 점수 = " + loop.computerAverageWhile(5));
 //        System.out.println("평균 점수 = " + loop.computerAverageFor(5));
     }
