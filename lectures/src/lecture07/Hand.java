@@ -1,6 +1,6 @@
 public class Hand {
     private Card[] hand;
-    int number_of_cards;
+    private int number_of_cards;
 
     public Hand() {
         number_of_cards = 0;
@@ -11,9 +11,9 @@ public class Hand {
         if (number_of_cards == 0) {
             System.out.println("들고 있는 카드가 없습니다.");
         } else {
-            for (int i = 0 ; i < number_of_cards-1; i++) {
+            for (int i = 0 ; i < 10; i++) {
                 if (hand[i] != null)
-                    System.out.print(hand[i].getSuit() + hand[i].getRank() + " ");
+                    System.out.print("(" + hand[i].getSuit() + " " + hand[i].getRank() + ") ");
             }
             System.out.println();
         }
@@ -21,7 +21,7 @@ public class Hand {
 
     public boolean receiveCard(Card c) {
         boolean result = false;
-        if (number_of_cards <= 10) {
+        if (number_of_cards < 10) {
             hand[number_of_cards] = c;
             number_of_cards++;
             result = true;
@@ -32,13 +32,14 @@ public class Hand {
     public Card removeCard() {
         Card choice = null;
         if (number_of_cards > 0) {
-            while (choice == null) {
-                int c = (int)(Math.random() * (number_of_cards - 1));
-                if (hand[c] != null) {
-                    choice = hand[c];
-                    hand[c] = null;
-                    number_of_cards--;
-                }
+            int c = (int)(Math.random() * 10);
+            while (hand[c] == null) {
+                c = (int)(Math.random() * 10);
+            }
+            if (hand[c] != null) {
+                choice = new Card(hand[c].getSuit(), hand[c].getRank());
+                hand[c] = null;
+                number_of_cards--;
             }
         }
         return choice;
@@ -47,16 +48,20 @@ public class Hand {
     public static void main(String[] args) {
         CardDeck deck = new CardDeck();
         Hand hand = new Hand();
-        for (int i = 0 ; i < 10 ; i++) {
+        int number = hand.number_of_cards;
+        while(number < 10) {
             hand.showHand();
             Card card = deck.newCard();
             if (hand.receiveCard(card))
                 hand.showHand();
+            number = hand.number_of_cards;
         }
-        for (int i = 0 ; i < 10 ; i++) {
+        while (number > 0) {
             hand.showHand();
             Card card = hand.removeCard();
-            System.out.println("The removed card is " + card.getSuit() + card.getRank() + ".");
+            System.out.println("The removed card is " + card.getSuit() + " " + card.getRank() + ".");
+            number = hand.number_of_cards;
         }
+        System.exit(0);
     }
 }

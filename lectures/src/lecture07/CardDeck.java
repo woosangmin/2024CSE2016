@@ -9,9 +9,9 @@ public class CardDeck {
         remain = 0;
         for (int i = 0; i < 52; i++) {
             if ((remain + 1) % 13 == 0)
-                deck[i] = new Card(Card.suits[remain / 13], 13);
+                deck[i] = new Card(Card.suits[remain / 13],  Card.ranks[13]);
             else
-                deck[i] = new Card(Card.suits[remain / 13], (remain + 1) % 13);
+                deck[i] = new Card(Card.suits[remain / 13], Card.ranks[(remain + 1) % 13]);
             remain++;
         }
     }
@@ -21,9 +21,9 @@ public class CardDeck {
             if (remain == 0) {
                 for (int i = 0; i < 52; i++) {
                     if ((remain + 1) % 13 == 0)
-                        deck[i] = new Card(Card.suits[remain / 13], 13);
+                        deck[i] = new Card(Card.suits[remain / 13], Card.ranks[13]);
                     else
-                        deck[i] = new Card(Card.suits[remain / 13], (remain + 1) % 13);
+                        deck[i] = new Card(Card.suits[remain / 13], Card.ranks[(remain + 1) % 13]);
                     remain++;
                 }
             } else {

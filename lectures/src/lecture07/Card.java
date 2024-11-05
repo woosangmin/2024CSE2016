@@ -1,11 +1,11 @@
 public class Card {
     private String suit;
-    private int rank;
+    private String rank;
 
-    static String[] suits = {"D", "H", "C", "S"};
-    static int[] ranks = {0,1,2,3,4,5,6,7,8,9,10,11,12,13};
+    static String[] suits = {"Diamond", "Heart", "Club", "Spade"};
+    static String[] ranks = {"0","A","2","3","4","5","6","7","8","9","10","Jack","Queen","King"};
 
-    public Card(String s, int r) {
+    public Card(String s, String r) {
         suit = s;
         rank = r;
     }
@@ -14,7 +14,7 @@ public class Card {
         return suit;
     }
 
-    public int getRank() {
+    public String getRank() {
         return rank;
     }
 }
