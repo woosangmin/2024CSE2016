@@ -102,10 +102,10 @@ public interface CardPlayerBehavior {
 }
 ```
 
-<img src="image08/dealer.png" width="750">
+<img src="lab08image/dealer.png" width="750">
 
 ### 실습4 : Blackjack 클래스 다이어그램 이해하기
 
 - 아래 블랙잭 게임의 클래스 다이어그램을 이해해보자.
 
-<img src="image08/blackjack.png" width="750">
+<img src="lab08image/blackjack.png" width="750">
