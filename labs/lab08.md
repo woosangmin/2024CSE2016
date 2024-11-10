@@ -88,7 +88,7 @@ else
 
 ### 실습3 : Dealer 클래스 구현
 
-- 아래 인터페이스를 구현하는 Dealer 클래스를 만들어보자.
+- 아래 인터페이스를 사용하는 Dealer 클래스를 만들어보자.
 
 ```java
 public interface CardPlayerBehavior {
