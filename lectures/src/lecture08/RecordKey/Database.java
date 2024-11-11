@@ -23,12 +23,15 @@ public class Database {
     public boolean delete(Key k) {
         boolean result = false;
         if (count > 0) {
-            for (int i = 0; i < base.length; i++) {
-                if (k.equals(base[i].getKey())) {
-                    base[i] = null;
+            int c = count;
+            while(c >= 0) {
+                if (k.equals(base[c].getKey())) {
+                    base[c] = null;
                     count -= 1;
                     result = true;
+                    break;
                 }
+                c--;
             }
         }
         return result;
@@ -37,11 +40,15 @@ public class Database {
     public boolean insert(Record r) {
         boolean result = false;
         if (count < base.length) {
-            for (int i = 0 ; i < base.length ; i++) {
-                if (!(base[i] == null)) {
-                    base[i] = r;
+            int c = count;
+            while (c < base.length) {
+                if(base[c] == null) {
+                    base[c] = r;
                     result = true;
+                    count++;
+                    break;
                 }
+                c++;
             }
         }
         return result;
