@@ -1,3 +1,5 @@
+// By the grace of the Lord
+
 package stage3;
 
 public interface CardPlayerBehavior {

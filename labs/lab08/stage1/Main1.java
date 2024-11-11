@@ -15,7 +15,7 @@ public class Main1 {
 //        System.out.println(y.getCity()); // 컴파일러가 잡아내지 못하는 에러 발생
 //        /* 4 */
 //        x = q;
-//        System.out.println(x.getCity()); // q가 Person으로 형변환 되어 에러 발생
+//        System.out.println(x.getCity()); // q는 Person이므로 에러 발생
 //        /* 5 */
 //        System.out.println(q.same(p)); // p가 PersonFrom이 아니기 때문에 에러 발생
 //    }
