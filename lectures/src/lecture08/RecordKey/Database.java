@@ -13,8 +13,9 @@ public class Database {
     public Record find(Key k) {
         Record result = null;
         for (int i = 0 ; i < base.length ; i++) {
-            if (k.equals(base[i].getKey())) {
-                result = base[i];
+            if (base[i] != null) {
+                if (k.equals(base[i].getKey()))
+                    result = base[i];
             }
         }
         return result;

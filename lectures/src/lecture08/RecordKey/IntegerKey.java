@@ -13,7 +13,10 @@ public class IntegerKey implements Key {
      * @return 같으면 true. 다르면 false
      */
     public boolean equals(Key m) {
-        return k == ((IntegerKey)m).getInt();
+        if (m instanceof IntegerKey)
+            return k == ((IntegerKey)m).getInt();
+        else
+            return false;
     }
 
     public int getInt() {
