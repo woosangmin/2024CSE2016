@@ -1,4 +1,5 @@
 // By the grace of the Lord
+// find, delete, insert에서 공통된 부분을 findLocation 메소드로 대체 할 수 있다.
 
 package stage2;
 
@@ -8,10 +9,13 @@ public class Database {
     private int count;
 
     /** Constructor 데이터베이스 초기화
-     * @param a - 배열의 길이
+     * @param initial_size - 배열의 길이
      * count - 배열에서 null이 아닌 원소의 갯수 */
-    public Database(int a) {
-        base = new Record[a];
+    public Database(int initial_size) {
+        if (initial_size > 0)
+            base = new Record[initial_size];
+        else
+            base = new Record[1];
         count = 0;
     }
     /** find - Key k를 가지고 있는 원소를 찾는다.
@@ -63,12 +67,22 @@ public class Database {
         // 배열에 null이 아닌 원소의 갯수가 배열의 길이보다 작은 경우
         if (count < base.length) {
             // count = 배열에서 맨 끝에 존재하는 원소의 위치 + 1
-            if( base[count] == null) {
+            if( base[count] == null ) {
                 base[count] = r;
                 result = true;
                 count++;
                 }
+        } else {
+            // 배열이 꽉 찬 경우 현재 배열보다 2배 긴 배열을 생성
+            Record[] temp = new Record[base.length * 2];
+            for (int i = 0 ; i < base.length ; i++) {
+                temp[i] = base[i];
             }
+            base = temp;
+            base[count] = r;
+            result = true;
+            count++;
+        }
         return result;
     }
 }
