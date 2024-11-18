@@ -1,3 +1,5 @@
+/* By the grace of the Lord */
+
 package Throbbing;
 
 /** 
