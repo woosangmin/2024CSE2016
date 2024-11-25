@@ -27,8 +27,12 @@ public class ThrobController {
         while (true) {
             ball.throb(); // 공의 크기를 변경
             writer.repaint(); // Panel을 다시 그림
-            try { Thread.sleep(time);} // delay time 만큼 기다린다.
-            catch (InterruptedException e) { }
+            delay(); // delay time 만큼 기다린다.
         }
+    }
+    /** delay - delay time 만큼 기다린다. */
+    public void delay() {
+        try { Thread.sleep(time);} // delay time 만큼 기다린다.
+        catch (InterruptedException e) { }
     }
 }

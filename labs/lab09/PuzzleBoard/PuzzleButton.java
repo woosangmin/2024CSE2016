@@ -31,13 +31,7 @@ public class PuzzleButton extends JButton implements ActionListener {
             num = Integer.parseInt(this.getText()); // 문자를 숫자로 변환 한다.
             if (board.move(num)) { // 버튼을 옮길 수 있는 경우 버튼을 옮긴다.
                 frame.update(); // frame을 다시 그린다.
-            } else { // 움직일 수 없으면 알림 메시지를 띄운다.
-                JOptionPane.showMessageDialog(null, "움직일 수 없습니다.");
             }
-        }
-        if (board.win()) { // 퍼즐을 푸는데 성공하였으면 알림 메시지를 띄우고 프로그램을 종료한다.
-            JOptionPane.showMessageDialog(null, "퍼즐을 완성하셨습니다.");
-            System.exit(0);
         }
     }
 }
