@@ -53,8 +53,8 @@ public class SlidePuzzleBoard {
                 }
             }
         } else {
-            // 채워넣을 숫자와 x,y 좌표
-            int x, y;
+            // x,y 좌표
+            int x, y, bigger = 0;
             // 보드의 크기에 맞춰 퍼즐의 존재 유무를 확인할 수 있는 배열 초기화
             int[] status = new int[board_size * board_size];
             // x와 y 좌표를 랜덤하게 생성할 때 필요
@@ -74,9 +74,21 @@ public class SlidePuzzleBoard {
                     // number를 1 증가시킨다.
                     number++;
                     // 퍼즐 보드의 칸이 채워져있다고 표시한다.
-                    status[board_size*x + y] = 1;
+                    status[board_size*x + y] = number;
                 }
             }
+            // 보드가 풀 수 있는 보드인지 아닌지 확인한다.
+            // N×N의 형태로 배치하였고, '자신보다 큰 수가 자신의 앞에 있는 갯수'의 합계가 I(bigger)이며, 빈칸에 해당하는 X가 있을 때
+            // N이 짝수, X가 맨 아래 짝수 칸, I(bigger)가 홀수이면 풀 수 있는 배치다. 나무위키 : 슬라이딩 보드
+            for (int i = 1 ; i < (board_size * board_size - 1) ; i++) {
+                for (int j = 0 ; j < i ; j++) {
+                    // status[i]의 앞에 있는 퍼즐들이 status[i]보다 크면 bigger를 1 늘린다.
+                    if (status[j] > status[i]) bigger += 1;
+                }
+            }
+            // bigger가 짝수이면 initializeBoard를 재귀호출하여 퍼즐을 다시 만든다.
+            if (bigger % 2 == 0) initializeBoard(false);
+
             // board의 비어있는 칸을 0으로 채운다.
             board[empty_row][empty_col] = new PuzzlePiece(0);
         }
