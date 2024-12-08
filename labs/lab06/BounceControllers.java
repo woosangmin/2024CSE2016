@@ -29,7 +29,7 @@ public class BounceControllers {
             ball1.move(time_unit);
             ball2.move(time_unit);
             // 피타고라스의 정리를 활용하여 두 공의 충돌 여부를 계산한다.
-            // x = Math.abs(ball1.getXposition() - ball2.getXposition());
+            x = Math.abs(ball1.getXposition() - ball2.getXposition());
             y = Math.abs(ball1.getYposition() - ball2.getYposition());
             x = Math.pow(x, 2); y = Math.pow(y, 2);
             d = Math.sqrt(x + y);

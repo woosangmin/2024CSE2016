@@ -23,4 +23,4 @@
 
 다음 클래스 다이어그램을 참고하면서 코드를 구현해보세요.
 
-<img src="lab11image/cd.png" width="750">
+<img src="lab10image/cd.png" width="750">
