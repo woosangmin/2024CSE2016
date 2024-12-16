@@ -81,7 +81,7 @@
      - catch (Exception e) 대신에 실제로 발생 가능한 세부 예외별로 처리할 것 (NullPointerException 은 제외)
      - HINT : 메소드 위에 마우스를 가져대면 발생 가능한 예외를 알려줌
      - readLine, nextToken, parseInt 등의 메소드를 주의
-     - 
+     
 ## 부장의 추가 요구사항 (총 5점)
  + [1점] 이름과 점수 사이에 , 외에 공백이 있어도 처리가 되었으면 좋겠음
    - 기존 : Kim,100 만 정상적으로 처리
